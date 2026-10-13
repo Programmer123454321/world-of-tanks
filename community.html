@@ -1,0 +1,302 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Полевой справочник Tanks Blitz от Lesta: четыре класса техники, бои 7×7, карты и сообщество СНГ.">
+<title>Сообщество и формы | Tanks Blitz — Field Manual</title>
+<link rel="icon" href="images/field-manual-mark.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/css/styles.css">
+<script src="assets/js/config.js" defer>
+</script>
+<script src="assets/js/main.js" defer>
+</script>
+</head>
+<body>
+<a class="skip-link" href="#content">К содержимому</a>
+<header class="site-header" id="top">
+<div class="container">
+ <div class="header-main">
+<a class="brand" href="index.html">
+<img src="images/field-manual-mark.svg" width="46" height="46" alt="Танк: перейти на главную">
+<span>
+<strong>FIELD MANUAL</strong>
+<small>Tanks Blitz · полевой справочник</small>
+</span>
+</a>
+ <div class="header-meta">
+<span>Изучай. Планируй. Действуй.</span>
+<span class="status-dot">Учебный проект</span>
+</div>
+</div>
+ <nav class="main-nav" aria-label="Основная навигация">
+<a href="index.html">Главная</a>
+<a href="vehicles.html">Техника</a>
+<a href="tactics.html">Тактика</a>
+<a href="maps.html">Карты</a>
+<a href="community.html" class="active" aria-current="page">Сообщество</a>
+<a href="dom-read.html">DOM: чтение</a>
+<a href="dom-transliteration.html">DOM: латиница</a>
+<a href="algorithm.html">Алгоритм</a>
+<a href="maps.html#map-types">Виды карт ↗</a>
+<a class="nav-external" href="https://tanksblitz.ru/ru/" target="_blank" rel="noopener noreferrer">Официальный сайт ↗</a>
+</nav>
+</div>
+</header>
+<main id="content">
+<div class="container page-heading">
+<div class="breadcrumb">
+<a href="index.html">Главная</a>
+<span>/</span>
+<span>04 / Сообщество</span>
+</div>
+<span class="eyebrow">04 / Сообщество</span>
+<h1>Вместе — понятнее.<br>Практика — полезнее.</h1>
+<p class="intro">Tanks Blitz объединяет игроков, авторов и турнирных комментаторов. Учись командной игре 7×7, смотри материалы сообщества СНГ и оставляй заявку на совместную тренировку.</p>
+</div>
+<div class="container">
+<nav class="section-nav" aria-label="Разделы страницы">
+<a href="#contacts">
+<span>01</span>Связаться</a>
+<a href="#order">
+<span>02</span>Заявка на тренировку</a>
+<a href="#esports"><span>03</span>Киберспорт и авторы СНГ</a>
+<a href="#top">К началу ↑</a>
+</nav>
+<section class="section" id="contacts">
+<div class="section-heading">
+<div>
+<div class="section-number">01 / ПОЛЕВОЙ СПРАВОЧНИК</div>
+<h2>Оставь контакт</h2>
+</div>
+<p>Учебная форма отправляет данные POST-запросом на удалённый сервер.</p>
+</div>
+<div class="split">
+<form class="form-panel" action="https://httpbin.org/post" method="post" target="_blank" data-remote-form>
+<h3>Контактная карточка</h3>
+<p class="form-description">После отправки в новой вкладке появится ответ сервера с переданными полями. Все поля обязательны.</p>
+<div class="form-grid">
+<div class="field">
+<label for="contact-surname">Фамилия</label>
+<input id="contact-surname" name="surname" type="text" autocomplete="family-name" placeholder="Ваша фамилия" required minlength="2" maxlength="60" value="Макарьев" data-student-field="surname">
+</div>
+<div class="field">
+<label for="contact-name">Имя</label>
+<input id="contact-name" name="given_name" type="text" autocomplete="given-name" placeholder="Ваше имя" required minlength="2" maxlength="60" value="Виталий" data-student-field="firstName">
+</div>
+<div class="field">
+<label for="contact-group">Учебная группа</label>
+<input id="contact-group" name="study_group" type="text" placeholder="Номер или название группы" required maxlength="40" value="Группа № 4" data-student-field="group">
+</div>
+<div class="field">
+<label for="contact-mobile">Мобильный телефон</label>
+<input id="contact-mobile" name="mobile_phone" type="tel" autocomplete="tel" placeholder="+7 900 000-00-00" pattern="[+0-9\(\) .\-]{10,25}" required maxlength="25">
+<small>От 10 до 15 цифр; допустимы +, пробелы, скобки и дефисы.</small>
+</div>
+<div class="field">
+<label for="contact-email">Электронная почта</label>
+<input id="contact-email" name="email" type="email" autocomplete="email" placeholder="name@example.com" required maxlength="100">
+</div>
+<div class="field">
+<label for="contact-date">Дата отправки сообщения</label>
+<input id="contact-date" name="message_date" type="date" required data-today>
+</div>
+</div>
+<div class="form-actions">
+<button class="button button-primary" type="submit">Отправить контакты →</button>
+<button class="button" type="reset">Очистить</button>
+</div>
+</form>
+<div class="reading">
+<figure>
+<div class="photo-slot hero-photo" data-placeholder="Фото команды будет здесь">
+<img src="images/community-team.png" alt="Команда new era — победитель Финала Лиги Блиц Поинт × RuStore 2026. Фото Lesta.">
+</div>
+<figcaption class="photo-caption"><span>Команда new era — победитель Финала Лиги Блиц Поинт × RuStore 2026. Фото Lesta.</span> <a class="photo-credit" href="https://tanksblitz.ru/ru/news/tournaments/blitz-point-p4-winners/" target="_blank" rel="noopener noreferrer">Источник ↗</a></figcaption>
+</figure>
+<h3>Как проходит подготовка</h3>
+<ol>
+<li>Выбираем один навык для короткого боя Blitz.</li>
+<li>Обсуждаем стартовый фланг и поддержку команды 7×7.</li>
+<li>Пробуем решение и разбираем результат.</li>
+</ol>
+</div>
+</div>
+</section>
+<section class="section" id="order">
+<div class="section-heading">
+<div>
+<div class="section-number">02 / ПОЛЕВОЙ СПРАВОЧНИК</div>
+<h2>Собери свою тренировку</h2>
+</div>
+<p>Значения уже заполнены: учебную заявку можно отправить сразу.</p>
+</div>
+<div class="split">
+<form class="form-panel" action="https://httpbin.org/post" method="post" target="_blank" data-remote-form>
+<h3>Заявка в тренировочный взвод</h3>
+<p class="form-description">Тематическая форма: выбери роль, продолжительность и навыки. Это учебная демонстрация отправки данных.</p>
+<input type="hidden" name="order_source" value="field-manual-training">
+<div class="form-grid">
+<div class="field">
+<label for="player-name">Игровой позывной</label>
+<input id="player-name" name="player_name" type="text" value="Новобранец" required minlength="2" maxlength="40">
+</div>
+<div class="field">
+<label for="session-length">Длительность, минут</label>
+<input id="session-length" name="training_minutes" type="number" value="60" min="30" max="180" step="15" required>
+</div>
+<fieldset class="field-wide">
+<legend>Класс техники</legend>
+<label class="choice">
+<input type="radio" name="training_class" value="heavy" required>
+<strong>Тяжёлые танки — позиция и укрытие</strong>
+</label>
+<label class="choice">
+<input type="radio" name="training_class" value="medium" checked>
+<strong>Средние танки — манёвр и поддержка</strong>
+</label>
+<label class="choice">
+<input type="radio" name="training_class" value="light">
+<strong>Лёгкие танки — разведка</strong>
+</label>
+<label class="choice">
+<input type="radio" name="training_class" value="tank-destroyer">
+<strong>ПТ-САУ — контроль направления</strong>
+</label>
+</fieldset>
+<fieldset class="field-wide">
+<legend>Что потренировать</legend>
+<label class="choice">
+<input type="checkbox" name="training_options" value="positions" checked>
+<strong>Выбор позиции</strong>
+</label>
+<label class="choice">
+<input type="checkbox" name="training_options" value="teamwork">
+<strong>Взаимодействие в команде</strong>
+</label>
+<label class="choice">
+<input type="checkbox" name="training_options" value="map-routes">
+<strong>Маршруты на карте</strong>
+</label>
+</fieldset>
+<div class="field">
+<label for="training-date">Желаемая дата</label>
+<input id="training-date" name="preferred_date" type="date" required data-today>
+</div>
+<div class="field">
+<label for="order-password">Учебный пароль заявки</label>
+<input id="order-password" name="order_password" type="password" value="training-demo" required minlength="6" maxlength="60" autocomplete="off">
+<small>Значение по умолчанию: training-demo.</small>
+</div>
+<div class="field field-wide">
+<label for="training-comment">Пожелания к тренировке</label>
+<textarea id="training-comment" name="training_comment" rows="3" maxlength="500">Хочу лучше выбирать позицию и помогать команде.</textarea>
+</div>
+</div>
+<div class="form-actions">
+<button class="button button-primary" type="submit">Отправить заявку →</button>
+<button class="button" type="reset">Вернуть значения</button>
+</div>
+</form>
+<div class="reading">
+<span class="eyebrow">Наша договорённость</span>
+<h3>Учимся командной игре Blitz</h3>
+<ul>
+<li>Обсуждаем решения, а не людей.<ul>
+<li>Описываем конкретный эпизод.</li>
+<li>Предлагаем понятную альтернативу.</li>
+</ul>
+</li>
+<li>Уважаем время команды.</li>
+<li>Выбираем посильный темп.</li>
+</ul>
+<div class="notice">
+<strong>Один навык за тренировку.</strong> После занятия запиши, что получилось, и выбери следующий шаг.</div>
+<div class="faq-list">
+<details>
+<summary>Что отправляет форма?</summary>
+<p>Позывной, длительность, класс техники, выбранные навыки, дату, учебный пароль, комментарий и скрытый источник заявки.</p>
+</details>
+<details>
+<summary>Где виден результат отправки?</summary>
+<p>Удалённый сервер httpbin.org покажет отправленные поля в новой вкладке. Формы используют стандартный метод POST.</p>
+</details>
+<details>
+<summary>Можно отправить значения по умолчанию?</summary>
+<p>Да. Нажми «Отправить заявку»: все обязательные поля тематической формы уже имеют значения.</p>
+</details>
+</div>
+</div>
+</div>
+</section>
+<section class="section" id="esports">
+<div class="section-heading">
+<div><div class="section-number">03 / СЦЕНА СНГ</div><h2>Киберспорт и авторы СНГ</h2></div>
+<p>Обучающие видео, разборы матчей и турнирные трансляции — разные способы лучше понять Tanks Blitz.</p>
+</div>
+<div class="split reading" style="margin-bottom:30px">
+<div><h3>Учись замечать командные решения</h3><p>В турнирах смотри, как команда выбирает фланг, распределяет машины и поддерживает игрока под огнём. Комментарий помогает проследить замысел; затем полезно пересмотреть один эпизод самостоятельно.</p></div>
+<div><h3>Обучение, комментарии и практика</h3><p>Обучающие видео помогают новичкам освоить технику. Комментарии делают командные решения понятными зрителям, а стримы игрока связывают соревновательную практику с обычными боями.</p></div>
+</div>
+<article class="creator-feature" id="madmaxblitz">
+<figure>
+<div class="photo-slot creator-portrait" data-placeholder="Аватар Mad Maks Blitz">
+<img src="images/madmaxblitz-portrait.png" alt="Mad Maks Blitz — аватар собственного канала автора.">
+</div>
+<figcaption class="creator-caption"><span>Mad Maks Blitz — аватар собственного канала автора.</span> <a class="photo-credit" href="https://live.vkvideo.ru/madmaksblitz" target="_blank" rel="noopener noreferrer">Источник ↗</a></figcaption>
+</figure>
+<div class="creator-content">
+<span class="card-label">В фокусе / Обучающие видео</span>
+<h3>MadMaxBlitz<br><span class="creator-subtitle">Mad Maks Blitz</span></h3>
+<p>Автор канала <strong>@madmaksblitz</strong> публикует видео и стримы о Blitz. В выбранном ролике он разбирает прокачку танков и их оснащение: оборудование, амуницию и снаряжение.</p>
+<div class="creator-video-note"><span class="video-icon" aria-hidden="true">▶</span><span>Видео Mad Maks Blitz о прокачке и оснащении танков</span></div>
+<div class="creator-links">
+<a class="button button-primary" href="https://www.youtube.com/watch?v=aK5siqGZ9qY" target="_blank" rel="noopener noreferrer">Смотреть видео на YouTube ↗</a>
+<a class="button" href="https://www.youtube.com/@madmaksblitz" target="_blank" rel="noopener noreferrer">Канал автора ↗</a>
+</div>
+<p class="creator-source">Ссылка на ролик и его тема — из <a href="https://t.me/s/mad_maks_blitz?before=3107" target="_blank" rel="noopener noreferrer">публикации самого автора ↗</a>.</p>
+</div>
+</article>
+<div class="card-grid creator-grid">
+<article class="card feature-card">
+<figure><div class="photo-slot" data-placeholder="Аватар M_E_F_O_D_Y"><img src="images/mefody-portrait.jpg" alt="M_E_F_O_D_Y — аватар собственного канала автора."></div><figcaption><span>M_E_F_O_D_Y — аватар собственного канала автора.</span> <a class="photo-credit" href="https://live.vkvideo.ru/m_e_f_o_d_y" target="_blank" rel="noopener noreferrer">Источник ↗</a></figcaption></figure>
+<div class="card-content"><span class="card-label">Автор / Комментатор</span><h3>M_E_F_O_D_Y</h3><p>Комментирует турниры и разбирает реплеи. В официальных материалах Tanks Blitz представлен как ведущий турнирных трансляций; на своём канале выделяет комментирование как основное направление.</p><a href="https://live.vkvideo.ru/m_e_f_o_d_y/about" target="_blank" rel="noopener noreferrer">Канал и разборы ↗</a><a class="creator-source" href="https://tanksblitz.ru/ru/news/tournaments/ez-katka-final-streams-2023/" target="_blank" rel="noopener noreferrer">Официальная трансляция с автором ↗</a></div>
+</article>
+<article class="card feature-card">
+<figure><div class="photo-slot" data-placeholder="Аватар KavayMan"><img src="images/kavayman-portrait.png" alt="KavayMan — аватар собственного канала автора."></div><figcaption><span>KavayMan — аватар собственного канала автора.</span> <a class="photo-credit" href="https://live.vkvideo.ru/kavayman" target="_blank" rel="noopener noreferrer">Источник ↗</a></figcaption></figure>
+<div class="card-content"><span class="card-label">Автор / Комментатор</span><h3>KavayMan Project</h3><p>Ведёт канал о Blitz с разборами и участвует в турнирных трансляциях. Официальный анонс Лиги Блиц Поинт включает его вместе с M_E_F_O_D_Y в расписание комментаторов.</p><a href="https://www.youtube.com/@KavayMan" target="_blank" rel="noopener noreferrer">YouTube-канал ↗</a><a class="creator-source" href="https://tanksblitz.ru/ru/news/tournaments/blitz-point-4-season-3-group-stage-streams/" target="_blank" rel="noopener noreferrer">Расписание с комментаторами ↗</a></div>
+</article>
+<article class="card feature-card">
+<figure><div class="photo-slot" data-placeholder="Аватар Flex1bleee"><img src="images/flex1bleee-portrait.png" alt="Flex1bleee — аватар собственного канала игрока."></div><figcaption><span>Flex1bleee — аватар собственного канала игрока.</span> <a class="photo-credit" href="https://live.vkvideo.ru/flex1bleee" target="_blank" rel="noopener noreferrer">Источник ↗</a></figcaption></figure>
+<div class="card-content"><span class="card-label">Игрок / Автор стримов</span><h3>Flex1bleee</h3><p>Представлен в составе команды meta в официальном анонсе финала Лиги Блиц Поинт. На собственном канале публикует обучающие и развлекательные материалы по Tanks Blitz.</p><a href="https://live.vkvideo.ru/flex1bleee/about" target="_blank" rel="noopener noreferrer">Канал игрока ↗</a><a class="creator-source" href="https://tanksblitz.ru/ru/news/tournaments/blitz-point-4-finals-streams/" target="_blank" rel="noopener noreferrer">Составы финала Лиги ↗</a></div>
+</article>
+</div>
+<div class="split reading" style="margin-top:30px">
+<div><h3>Как смотреть с пользой</h3><ol><li>Выбери один навык: позиция, фланг или оснащение.</li><li>Останови запись перед решением и предложи свой ход.</li><li>Сравни варианты и проверь идею на тренировке.</li></ol></div>
+<div><h3>Что замечать в матче</h3><ul><li>Командное движение.<ul><li>Своевременную смену фланга.</li><li>Поддержку машины, принимающей огонь.</li></ul></li><li>Позиции четырёх классов техники.</li><li>Объяснения автора, которые можно проверить в игре.</li></ul></div>
+</div>
+</section>
+<a class="top-link" href="#top">К началу страницы ↑</a>
+</div>
+</main>
+<footer class="site-footer">
+<div class="container">
+<div class="footer-top">
+<div>
+<div class="footer-brand">FIELD MANUAL / TANKS BLITZ</div>
+<p>Учебный справочник о Tanks Blitz от Lesta: техника, бои 7×7 и русскоязычное сообщество. Изображения: материалы Lesta и публичные каналы авторов.</p>
+</div>
+<div class="footer-links">
+<a href="community.html#contacts">Связаться</a>
+<a href="community.html#order">Записаться на тренировку</a>
+<a href="https://wiki.lesta.ru/ru/Tanks_Blitz" target="_blank" rel="noopener noreferrer">Руководство Tanks Blitz ↗</a>
+</div>
+</div>
+<div class="footer-bottom">
+<span>2026 · HTML / CSS / JavaScript</span>
+<span>Сначала понимание — затем победа.</span>
+</div>
+</div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Полевой справочник Tanks Blitz от Lesta: четыре класса техники, бои 7×7, карты и сообщество СНГ.">
+<title>Решение алгоритмической задачи | Tanks Blitz — Field Manual</title>
+<link rel="icon" href="images/field-manual-mark.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/css/styles.css">
+<script src="assets/js/config.js" defer>
+</script>
+<script src="assets/js/main.js" defer>
+</script>
+<script src="assets/js/algorithm.js" defer>
+</script>
+</head>
+<body>
+<a class="skip-link" href="#content">К содержимому</a>
+<header class="site-header" id="top">
+<div class="container">
+ <div class="header-main">
+<a class="brand" href="index.html">
+<img src="images/field-manual-mark.svg" width="46" height="46" alt="Танк: перейти на главную">
+<span>
+<strong>FIELD MANUAL</strong>
+<small>Tanks Blitz · полевой справочник</small>
+</span>
+</a>
+ <div class="header-meta">
+<span>Изучай. Планируй. Действуй.</span>
+<span class="status-dot">Учебный проект</span>
+</div>
+</div>
+ <nav class="main-nav" aria-label="Основная навигация">
+<a href="index.html">Главная</a>
+<a href="vehicles.html">Техника</a>
+<a href="tactics.html">Тактика</a>
+<a href="maps.html">Карты</a>
+<a href="community.html">Сообщество</a>
+<a href="dom-read.html">DOM: чтение</a>
+<a href="dom-transliteration.html">DOM: латиница</a>
+<a href="algorithm.html" class="active" aria-current="page">Алгоритм</a>
+<a href="maps.html#map-types">Виды карт ↗</a>
+<a class="nav-external" href="https://tanksblitz.ru/ru/" target="_blank" rel="noopener noreferrer">Официальный сайт ↗</a>
+</nav>
+</div>
+</header>
+<main id="content">
+<div class="container page-heading">
+<div class="breadcrumb">
+<a href="index.html">Главная</a>
+<span>/</span>
+<span>Алгоритмическая задача</span>
+</div>
+<span class="eyebrow">07 / DOM и JavaScript</span>
+<h1>Решение алгоритмической задачи</h1>
+<p class="intro">Решение из algo.html подключено к назначенному варианту 1050. Введи число a, проверь результат и отправь формулировку, данные и решение на сервер.</p>
+</div>
+<div class="container">
+<nav class="section-nav" aria-label="Разделы страницы">
+<a href="#section-1">
+<span>01</span>Вычисление</a>
+<a href="#section-2">
+<span>02</span>Две ветви вычисления</a>
+<a href="#top">К началу ↑</a>
+</nav>
+<section class="section" id="section-1">
+<div class="split">
+<form id="algorithm-form" class="form-panel" action="https://httpbin.org/post" method="post" target="_blank" data-remote-form>
+<h2 style="font-size:24px;margin-bottom:18px">Условие и данные</h2>
+<div class="form-grid">
+<div class="field field-wide">
+<label for="algorithm-task">Номер алгоритмической задачи</label>
+<select id="algorithm-task" name="algorithm_task_number" required>
+<option value="">Выбери номер задачи</option>
+</select>
+<small>Вариант 1050 решается по предоставленному algo.html. Задачи 1001–1018 сохранены как дополнительные примеры.</small>
+</div>
+<div class="field field-wide">
+<label for="algorithm-statement">Формулировка задачи</label>
+<textarea id="algorithm-statement" name="formulation" rows="5" readonly placeholder="Формулировка выбранной задачи">Дано вещественное число A. Вычислить x = a**2+4+5 при a &lt; 62; в противном случае x = 1/(a**2) + 4a + 5</textarea>
+</div>
+</div>
+<div class="form-grid" id="algorithm-inputs" style="margin-top:20px">
+</div>
+<input type="hidden" name="submission_source" value="field-manual-algorithm">
+<div class="form-actions">
+<button type="button" id="calculate-algorithm" class="button button-primary">Проверить →</button>
+<button type="reset" class="button">Сбросить</button>
+</div>
+<div class="field" style="margin-top:24px">
+<label for="algorithm-result-field">Результат для отправки</label>
+<textarea id="algorithm-result-field" name="result" readonly rows="3" placeholder="Результат вычисления появится здесь">
+</textarea>
+</div>
+<div class="form-actions">
+<button type="submit" id="submit-algorithm" class="button">Отправить на сервер ↗</button>
+<small>В новой вкладке откроется ответ удалённого сервера.</small>
+</div>
+</form>
+<aside>
+<div class="algorithm-result" aria-live="polite" aria-atomic="true">
+<h3>Результат вычисления</h3>
+<p id="algorithm-result-text">Введи данные и нажми «Проверить».</p>
+<p id="algorithm-result-details" class="caption-note">
+</p>
+</div>
+<div id="algorithm-status" class="js-status" role="status"></div>
+<div class="reading" style="margin-top:30px">
+<h3>Вычисления без лишних шагов</h3>
+<ol class="list-steps">
+<li>
+<strong>Назначенный вариант — 1050.</strong>Для него подключены формула из algo.html и поле a со значением 10 по умолчанию.</li>
+<li>
+<strong>Проверь входные данные.</strong>Поля принимают числа; программа учитывает области определения и ограничения.</li>
+<li>
+<strong>Вычисли и отправь.</strong>Перед отправкой результат пересчитывается, чтобы он соответствовал текущим данным.</li>
+</ol>
+</div>
+<div class="notice">При a &lt; 62 используется первая ветвь. Граница a = 62 относится ко второй ветви.</div>
+</aside>
+</div>
+<noscript>
+<div class="no-js-note">Для выбора варианта и вычисления нужен JavaScript.</div>
+</noscript>
+</section>
+<section class="section reading" id="section-2">
+<div class="section-number">02 / УСЛОВИЕ И РЕШЕНИЕ</div>
+<h2>Две ветви вычисления</h2>
+<p style="margin-top:20px">Вариант 1050 использует предоставленное решение из algo.html. При a &lt; 62 вычисляется a² + 4 + 5; при a ≥ 62 — 1/a² + 4a + 5.</p>
+<pre><code>if (a &lt; 62) {
+  result = a * a + 4 + 5;
+} else {
+  result = 1 / (a * a) + 4 * a + 5;
+}</code></pre>
+<ol style="margin-top:20px">
+<li>Введи вещественное число a; значение по умолчанию — 10.</li>
+<li>Нажми «Проверить»: при a = 10 результат равен 109.</li>
+<li>Нажми «Отправить»: форма передаст номер, формулировку, a и пересчитанный результат на сервер.</li>
+</ol>
+<p>Значение a = 62 относится ко второй ветви. После изменения входного числа результат очищается. В списке также сохранены дополнительные учебные примеры 1001–1018.</p>
+</section>
+<a class="top-link" href="#top">К началу страницы ↑</a>
+</div>
+</main>
+<footer class="site-footer">
+<div class="container">
+<div class="footer-top">
+<div>
+<div class="footer-brand">FIELD MANUAL / TANKS BLITZ</div>
+<p>Учебный справочник о Tanks Blitz от Lesta: техника, бои 7×7 и русскоязычное сообщество. Изображения: материалы Lesta и публичные каналы авторов.</p>
+</div>
+<div class="footer-links">
+<a href="community.html#contacts">Связаться</a>
+<a href="community.html#order">Записаться на тренировку</a>
+<a href="https://wiki.lesta.ru/ru/Tanks_Blitz" target="_blank" rel="noopener noreferrer">Руководство Tanks Blitz ↗</a>
+</div>
+</div>
+<div class="footer-bottom">
+<span>2026 · HTML / CSS / JavaScript</span>
+<span>Сначала понимание — затем победа.</span>
+</div>
+</div>
+</footer>
+</body>
+</html>

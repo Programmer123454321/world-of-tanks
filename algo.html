@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <title>form_1015</title>
+</head>
+
+<body>
+    <p name="formulation">Дано вещественное число A. Вычислить x = a**2+4+5 при a &lt; 62; в противном случае x = 1/(a**2) + 4a + 5</p>
+    <form action="https://www.bing.com/search?" id="UserEnter" name="UserEnter" target="_blank">
+        <ul>
+            <li>Для поисковика:<input name="q" value="search"></li>
+            <li>Формулировка задачи
+                <br><textarea cols="60" rows="4" id="task" name="formulation">Дано вещественное число A. Вычислить x = a**2+4+5 при a &lt; 62; в противном случае x = 1/(a**2) + 4a + 5</textarea></li>
+            <li>a: <input id="a" name="a" type="number" step="any" value="10"></li>
+            <li>Результат решения задачи: <input id="result" name="result" value="не определен"></li>
+            <li>действие 1: <input id="verify" type="button" value="Проверить"></li>
+            <li>действие 2: <input id="send" type="button" value="Отправить"></li>
+        </ul>
+    </form>
+
+    <script>
+        var inputA = document.getElementById("a");
+        var inputResult = document.getElementById("result");
+        var buttonVerify = document.getElementById("verify");
+        var buttonSend = document.getElementById("send");
+        var form = document.getElementById("UserEnter");
+
+        function calculate() {
+            var a = parseFloat(inputA.value);
+
+            if (isNaN(a)) {
+                inputResult.value = "введите число a";
+                return false;
+            }
+
+            if (a < 62) {
+                inputResult.value = a * a + 4 + 5;
+            } else {
+                inputResult.value = 1 / (a * a) + 4 * a + 5;
+            }
+            return true;
+        }
+
+        function sendForm() {
+            if (calculate()) {
+                form.submit();
+            }
+        }
+
+        buttonVerify.addEventListener("click", calculate);
+        buttonSend.addEventListener("click", sendForm);
+        inputA.addEventListener("input", function () {
+            inputResult.value = "не определен";
+        });
+    </script>
+</body>
+
+</html>
