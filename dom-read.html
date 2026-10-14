@@ -1,92 +1,98 @@
 <!doctype html>
 <html lang="ru">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Полевой справочник Tanks Blitz от Lesta: четыре класса техники, бои 7×7, карты и сообщество СНГ.">
-<title>DOM_JS. Считываем информацию из DOM | Tanks Blitz — Field Manual</title>
-<link rel="icon" href="images/field-manual-mark.svg" type="image/svg+xml">
-<link rel="stylesheet" href="assets/css/styles.css">
-<script src="assets/js/config.js" defer>
-</script>
-<script src="assets/js/main.js" defer>
-</script>
-<script src="assets/js/passport.js" defer>
-</script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description"
+          content="Полевой справочник Tanks Blitz от Lesta: четыре класса техники, бои 7×7, карты и сообщество СНГ.">
+    <title>DOM_JS. Считываем информацию из DOM | Tanks Blitz — Field Manual</title>
+    <link rel="icon" href="images/field-manual-mark.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <script src="assets/js/config.js" defer>
+    </script>
+    <script src="assets/js/main.js" defer>
+    </script>
+    <script src="assets/js/passport.js" defer>
+    </script>
 </head>
 <body>
 <a class="skip-link" href="#content">К содержимому</a>
 <header class="site-header" id="top">
-<div class="container">
- <div class="header-main">
-<a class="brand" href="index.html">
-<img src="images/field-manual-mark.svg" width="46" height="46" alt="Танк: перейти на главную">
-<span>
+    <div class="container">
+        <div class="header-main">
+            <a class="brand" href="index.html">
+                <img src="images/field-manual-mark.svg" width="46" height="46" alt="Танк: перейти на главную">
+                <span>
 <strong>FIELD MANUAL</strong>
 <small>Tanks Blitz · полевой справочник</small>
 </span>
-</a>
- <div class="header-meta">
-<span>Изучай. Планируй. Действуй.</span>
-<span class="status-dot">Учебный проект</span>
-</div>
-</div>
- <nav class="main-nav" aria-label="Основная навигация">
-<a href="index.html">Главная</a>
-<a href="vehicles.html">Техника</a>
-<a href="tactics.html">Тактика</a>
-<a href="maps.html">Карты</a>
-<a href="community.html">Сообщество</a>
-<a href="dom-read.html" class="active" aria-current="page">DOM: чтение</a>
-<a href="dom-transliteration.html">DOM: латиница</a>
-<a href="algorithm.html">Алгоритм</a>
-<a href="maps.html#map-types">Виды карт ↗</a>
-<a class="nav-external" href="https://tanksblitz.ru/ru/" target="_blank" rel="noopener noreferrer">Официальный сайт ↗</a>
-</nav>
-</div>
+            </a>
+            <div class="header-meta">
+                <span>Изучай. Планируй. Действуй.</span>
+                <span class="status-dot">Учебный проект</span>
+            </div>
+        </div>
+        <nav class="main-nav" aria-label="Основная навигация">
+            <a href="index.html">Главная</a>
+            <a href="vehicles.html">Техника</a>
+            <a href="tactics.html">Тактика</a>
+            <a href="maps.html">Карты</a>
+            <a href="community.html">Сообщество</a>
+            <a href="dom-read.html" class="active" aria-current="page">DOM: чтение</a>
+            <a href="dom-transliteration.html">DOM: латиница</a>
+            <a href="algorithm.html">Алгоритм</a>
+            <a href="maps.html#map-types">Виды карт ↗</a>
+            <a class="nav-external" href="https://tanksblitz.ru/ru/" target="_blank" rel="noopener noreferrer">Официальный
+                сайт ↗</a>
+        </nav>
+    </div>
 </header>
 <main id="content">
-<div class="container page-heading">
-<div class="breadcrumb">
-<a href="index.html">Главная</a>
-<span>/</span>
-<span>05 / DOM и JavaScript</span>
-</div>
-<span class="eyebrow">05 / DOM и JavaScript</span>
-<h1>DOM_JS. Считываем информацию из DOM</h1>
-<div class="intro">Паспортные данные представлены строками HTML. Фамилия, имя и год рождения считываются через getElementsByTagName и childNodes.</div>
-</div>
-<div class="container">
-<nav class="section-nav" aria-label="Разделы страницы">
-<a href="#section-1">
-<span>01</span>Паспорт и чтение DOM</a>
-<a href="#section-2">
-<span>02</span>Скриншот результата</a>
-<a href="#top">К началу ↑</a>
-</nav>
-<section class="section" id="section-1">
-<div class="passport-layout">
-<div class="code-panel passport-dom-data">
-<section aria-label="Страница 2 паспорта">
-<h2>Страница 2</h2>
-<p>Паспорт выдан: <span>УФМС по городу СПб и ЛО</span></p>
-<p>Фамилия: <span id="surname">Макарьев</span></p>
-<p>Имя: <span id="firstname">Виталий</span></p>
-<p>Отчество: <span id="patronymic">Юрьевич</span></p>
-<p>Пол: <span>мужской</span></p>
-<p>Дата рождения: <span>17.04.</span><span id="year">2007</span></p>
-<p>Место рождения: <span>Санкт-Петербург</span></p>
-</section>
-<section aria-label="Страница 3 паспорта">
-<h2>Страница 3</h2>
-<p>Дата выдачи: <span>23.02.2022</span></p>
-<p>Код подразделения: <span>965-085</span></p>
-</section>
-</div>
-<aside class="code-panel">
-<h3>Команды для консоли браузера</h3>
-<div class="reading">Открой F12 и вкладку Console. Команды считывают поля в порядке их расположения на странице.</div>
-<pre><code>// Фамилия
+    <div class="container page-heading">
+        <div class="breadcrumb">
+            <a href="index.html">Главная</a>
+            <span>/</span>
+            <span>05 / DOM и JavaScript</span>
+        </div>
+        <span class="eyebrow">05 / DOM и JavaScript</span>
+        <h1>DOM_JS. Считываем информацию из DOM</h1>
+        <div class="intro">Паспортные данные представлены строками HTML. Фамилия, имя и год рождения считываются через
+            getElementsByTagName и childNodes.
+        </div>
+    </div>
+    <div class="container">
+        <nav class="section-nav" aria-label="Разделы страницы">
+            <a href="#section-1">
+                <span>01</span>Паспорт и чтение DOM</a>
+            <a href="#section-2">
+                <span>02</span>Скриншот результата</a>
+            <a href="#top">К началу ↑</a>
+        </nav>
+        <section class="section" id="section-1">
+            <div class="passport-layout">
+                <div class="code-panel passport-dom-data">
+                    <section aria-label="Страница 2 паспорта">
+                        <h2>Страница 2</h2>
+                        <p>Паспорт выдан: <span>УФМС по городу СПб и ЛО</span></p>
+                        <p>Фамилия: <span id="surname">Макарьев</span></p>
+                        <p>Имя: <span id="firstname">Виталий</span></p>
+                        <p>Отчество: <span id="patronymic">Юрьевич</span></p>
+                        <p>Пол: <span>мужской</span></p>
+                        <p>Дата рождения: <span>17.04.</span><span id="year">2007</span></p>
+                        <p>Место рождения: <span>Санкт-Петербург</span></p>
+                    </section>
+                    <section aria-label="Страница 3 паспорта">
+                        <h2>Страница 3</h2>
+                        <p>Дата выдачи: <span>23.02.2022</span></p>
+                        <p>Код подразделения: <span>965-085</span></p>
+                    </section>
+                </div>
+                <aside class="code-panel">
+                    <h3>Команды для консоли браузера</h3>
+                    <div class="reading">Открой F12 и вкладку Console. Команды считывают поля в порядке их расположения
+                        на странице.
+                    </div>
+                    <pre><code>// Фамилия
 document.getElementsByTagName('p')[1].childNodes[1].innerText
 
 // Имя
@@ -94,59 +100,75 @@ document.getElementsByTagName('p')[2].childNodes[1].innerText
 
 // Год рождения
 document.getElementsByTagName('p')[5].childNodes[2].innerText</code></pre>
-<button class="button button-primary" type="button" id="read-passport" style="margin-top:20px">Считать из DOM →</button>
-<dl class="data-list">
-<div><dt>Фамилия</dt><dd id="read-surname">—</dd></div>
-<div><dt>Имя</dt><dd id="read-name">—</dd></div>
-<div><dt>Год рождения</dt><dd id="read-year">—</dd></div>
-</dl>
-<div class="js-status" id="passport-status" role="status" aria-live="polite"></div>
-</aside>
-</div>
-</section>
-<section class="section" id="section-2">
-<div class="section-heading">
-<div>
-<div class="section-number">02 / ПОЛЕВОЙ СПРАВОЧНИК</div>
-<h2>Результат в инструментах разработчика</h2>
-</div>
-<p>Результаты чтения фамилии, имени и года рождения в консоли браузера.</p>
-</div>
-<figure>
-<div class="photo-slot screenshot-slot" data-placeholder="Скриншот Console">
-<img src="images/passport-dom-screenshot.png" alt="Скриншот DOM-чтения фамилии, имени и года рождения в консоли браузера.">
-</div>
-<figcaption class="photo-caption">
-<span>Скриншот DOM-чтения фамилии, имени и года рождения в консоли браузера.</span>
-<span class="file-name">passport-dom-screenshot.png</span>
-</figcaption>
-</figure>
-<div class="notice">Команды на скриншоте обращаются к тем же элементам DOM, что и примеры выше.</div>
-</section>
-<a class="top-link" href="#top">К началу страницы ↑</a>
-<noscript>
-<div class="no-js-note">Для чтения данных кнопкой требуется JavaScript. HTML-элементы паспорта доступны в разметке страницы.</div>
-</noscript>
-</div>
+                    <button class="button button-primary" type="button" id="read-passport" style="margin-top:20px">
+                        Считать из DOM →
+                    </button>
+                    <dl class="data-list">
+                        <div>
+                            <dt>Фамилия</dt>
+                            <dd id="read-surname">—</dd>
+                        </div>
+                        <div>
+                            <dt>Имя</dt>
+                            <dd id="read-name">—</dd>
+                        </div>
+                        <div>
+                            <dt>Год рождения</dt>
+                            <dd id="read-year">—</dd>
+                        </div>
+                    </dl>
+                    <div class="js-status" id="passport-status" role="status" aria-live="polite"></div>
+                </aside>
+            </div>
+        </section>
+        <section class="section" id="section-2">
+            <div class="section-heading">
+                <div>
+                    <div class="section-number">02 / ПОЛЕВОЙ СПРАВОЧНИК</div>
+                    <h2>Результат в инструментах разработчика</h2>
+                </div>
+                <p>Результаты чтения фамилии, имени и года рождения в консоли браузера.</p>
+            </div>
+            <figure>
+                <div class="photo-slot screenshot-slot" data-placeholder="Скриншот Console">
+                    <img src="images/passport-dom-screenshot.png"
+                         alt="Скриншот DOM-чтения фамилии, имени и года рождения в консоли браузера.">
+                </div>
+                <figcaption class="photo-caption">
+                    <span>Скриншот DOM-чтения фамилии, имени и года рождения в консоли браузера.</span>
+                    <span class="file-name">passport-dom-screenshot.png</span>
+                </figcaption>
+            </figure>
+            <div class="notice">Команды на скриншоте обращаются к тем же элементам DOM, что и примеры выше.</div>
+        </section>
+        <a class="top-link" href="#top">К началу страницы ↑</a>
+        <noscript>
+            <div class="no-js-note">Для чтения данных кнопкой требуется JavaScript. HTML-элементы паспорта доступны в
+                разметке страницы.
+            </div>
+        </noscript>
+    </div>
 </main>
 <footer class="site-footer">
-<div class="container">
-<div class="footer-top">
-<div>
-<div class="footer-brand">FIELD MANUAL / TANKS BLITZ</div>
-<p>Учебный справочник о Tanks Blitz от Lesta: техника, бои 7×7 и русскоязычное сообщество. Изображения: материалы Lesta и публичные каналы авторов.</p>
-</div>
-<div class="footer-links">
-<a href="community.html#contacts">Связаться</a>
-<a href="community.html#order">Записаться на тренировку</a>
-<a href="https://wiki.lesta.ru/ru/Tanks_Blitz" target="_blank" rel="noopener noreferrer">Руководство Tanks Blitz ↗</a>
-</div>
-</div>
-<div class="footer-bottom">
-<span>2026 · Высшая школа экономики</span>
-<span>Сначала понимание — затем победа.</span>
-</div>
-</div>
+    <div class="container">
+        <div class="footer-top">
+            <div>
+                <div class="footer-brand">FIELD MANUAL / TANKS BLITZ</div>
+                <p>Учебный справочник о Tanks Blitz от Lesta: техника, бои 7×7 и русскоязычное сообщество. Изображения:
+                    материалы Lesta и публичные каналы авторов.</p>
+            </div>
+            <div class="footer-links">
+                <a href="community.html#contacts">Связаться</a>
+                <a href="community.html#order">Записаться на тренировку</a>
+                <a href="https://wiki.lesta.ru/ru/Tanks_Blitz" target="_blank" rel="noopener noreferrer">Руководство
+                    Tanks Blitz ↗</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>2026 · Высшая школа экономики</span>
+            <span>Сначала понимание — затем победа.</span>
+        </div>
+    </div>
 </footer>
 </body>
 </html>

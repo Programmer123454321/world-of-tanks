@@ -1,117 +1,148 @@
 <!doctype html>
 <html lang="ru">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Полевой справочник Tanks Blitz от Lesta: четыре класса техники, бои 7×7, карты и сообщество СНГ.">
-<title>Изменяем кириллицу на латиницу по клику | Tanks Blitz — Field Manual</title>
-<link rel="icon" href="images/field-manual-mark.svg" type="image/svg+xml">
-<link rel="stylesheet" href="assets/css/styles.css">
-<script src="assets/js/config.js" defer>
-</script>
-<script src="assets/js/main.js" defer>
-</script>
-<script src="assets/js/passport.js" defer>
-</script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description"
+          content="Полевой справочник Tanks Blitz от Lesta: четыре класса техники, бои 7×7, карты и сообщество СНГ.">
+    <title>Изменяем кириллицу на латиницу по клику | Tanks Blitz — Field Manual</title>
+    <link rel="icon" href="images/field-manual-mark.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <script src="assets/js/config.js" defer>
+    </script>
+    <script src="assets/js/main.js" defer>
+    </script>
+    <script src="assets/js/passport.js" defer>
+    </script>
 </head>
 <body>
 <a class="skip-link" href="#content">К содержимому</a>
 <header class="site-header" id="top">
-<div class="container">
- <div class="header-main">
-<a class="brand" href="index.html">
-<img src="images/field-manual-mark.svg" width="46" height="46" alt="Танк: перейти на главную">
-<span>
+    <div class="container">
+        <div class="header-main">
+            <a class="brand" href="index.html">
+                <img src="images/field-manual-mark.svg" width="46" height="46" alt="Танк: перейти на главную">
+                <span>
 <strong>FIELD MANUAL</strong>
 <small>Tanks Blitz · полевой справочник</small>
 </span>
-</a>
- <div class="header-meta">
-<span>Изучай. Планируй. Действуй.</span>
-<span class="status-dot">Учебный проект</span>
-</div>
-</div>
- <nav class="main-nav" aria-label="Основная навигация">
-<a href="index.html">Главная</a>
-<a href="vehicles.html">Техника</a>
-<a href="tactics.html">Тактика</a>
-<a href="maps.html">Карты</a>
-<a href="community.html">Сообщество</a>
-<a href="dom-read.html">DOM: чтение</a>
-<a href="dom-transliteration.html" class="active" aria-current="page">DOM: латиница</a>
-<a href="algorithm.html">Алгоритм</a>
-<a href="maps.html#map-types">Виды карт ↗</a>
-<a class="nav-external" href="https://tanksblitz.ru/ru/" target="_blank" rel="noopener noreferrer">Официальный сайт ↗</a>
-</nav>
-</div>
+            </a>
+            <div class="header-meta">
+                <span>Изучай. Планируй. Действуй.</span>
+                <span class="status-dot">Учебный проект</span>
+            </div>
+        </div>
+        <nav class="main-nav" aria-label="Основная навигация">
+            <a href="index.html">Главная</a>
+            <a href="vehicles.html">Техника</a>
+            <a href="tactics.html">Тактика</a>
+            <a href="maps.html">Карты</a>
+            <a href="community.html">Сообщество</a>
+            <a href="dom-read.html">DOM: чтение</a>
+            <a href="dom-transliteration.html" class="active" aria-current="page">DOM: латиница</a>
+            <a href="algorithm.html">Алгоритм</a>
+            <a href="maps.html#map-types">Виды карт ↗</a>
+            <a class="nav-external" href="https://tanksblitz.ru/ru/" target="_blank" rel="noopener noreferrer">Официальный
+                сайт ↗</a>
+        </nav>
+    </div>
 </header>
 <main id="content">
-<div class="container page-heading">
-<div class="breadcrumb">
-<a href="index.html">Главная</a>
-<span>/</span>
-<span>06 / DOM и JavaScript</span>
-</div>
-<span class="eyebrow">06 / DOM и JavaScript</span>
-<h1>Изменяем кириллицу на латиницу по клику</h1>
-<div class="intro">Кнопки заменяют innerText полей поверх изображения паспорта. Фамилия, имя, отчество, пол и место рождения переходят в латинскую запись, а год рождения 2007 — в MMVII.</div>
-</div>
-<div class="container">
-<nav class="section-nav" aria-label="Разделы страницы">
-<a href="#section-1">
-<span>01</span>Изменение по событию</a>
-<a href="#section-2">
-<span>02</span>Как это работает</a>
-<a href="#top">К началу ↑</a>
-</nav>
-<section class="section" id="section-1">
-<div class="hero-actions passport-actions">
-<button class="button button-primary" type="button" onclick="toLatin()" id="transliterate-passport">Заменить на латиницу →</button>
-<button class="button" type="button" onclick="toCyrillic()" id="restore-passport">Вернуть кириллицу</button>
-</div>
-<div class="passport-layout">
-<div class="passport-reference" id="passport" role="group" aria-label="Вторая и третья страницы паспорта">
-<img class="passport-background" src="images/passport.png" width="522" height="731" alt="Вторая и третья страницы паспорта">
-<div class="photo-slot passport-reference-photo" data-placeholder=""><img src="images/passport-photo.png" alt="Фотография владельца"></div>
-<div class="f" style="left:20.3%;top:10.7%;" id="issuer">УФМС по городу СПб и ЛО</div>
-<div class="f" style="left:18.8%;top:21.9%;" id="issuedate">23.02.2022</div>
-<div class="f" style="left:55.6%;top:21.9%;" id="code">965-085</div>
-<div class="f" style="left:42.1%;top:56.1%;" id="surname">Макарьев</div>
-<div class="f" style="left:38.1%;top:63.8%;" id="firstname">Виталий</div>
-<div class="f" style="left:41.8%;top:67.5%;" id="patronymic">Юрьевич</div>
-<div class="f" style="left:37.1%;top:71.3%;" id="gender">мужской</div>
-<div class="f" style="left:56.9%;top:71.3%;" id="birthdate">17.04.<span id="year">2007</span></div>
-<div class="f" style="left:42.3%;top:75.0%;" id="birthplace">Санкт-Петербург</div>
-</div>
-<aside class="code-panel">
-<h3>Замена по событию click</h3>
-<div class="reading">Кнопки вызывают toLatin() и toCyrillic(). Обработчики меняют innerText полей поверх изображения паспорта.</div>
-<div class="js-status" id="passport-status" role="status" aria-live="polite"></div>
-<dl class="data-list">
-<div><dt>Состояние</dt><dd id="passport-language">Кириллица</dd></div>
-<div><dt>Год на латинице</dt><dd>MMVII</dd></div>
-<div><dt>Меняемое свойство</dt><dd>innerText</dd></div>
-</dl>
-<div class="notice">В латинском представлении 2007 = MMVII. Пол записывается как male, место рождения — как Sankt-Peterburg.</div>
-</aside>
-</div>
-</section>
-<section class="section" id="section-2">
-<div class="section-heading">
-<div><div class="section-number">02 / DOM И JAVASCRIPT</div><h2>От события к результату</h2></div>
-<p>Один щелчок меняет поля паспорта; второй возвращает исходные данные.</p>
-</div>
-<div class="split">
-<div class="reading">
-<ol class="list-steps">
-<li><strong>Вызываем функцию.</strong>Атрибут onclick связывает кнопку с toLatin() или toCyrillic().</li>
-<li><strong>Меняем innerText.</strong>Фамилия, имя, отчество, пол и место рождения получают латинскую запись.</li>
-<li><strong>Записываем год римскими цифрами.</strong>2007 превращается в MMVII. Кнопка возврата восстанавливает все исходные значения.</li>
-</ol>
-</div>
-<div class="code-panel">
-<h3>Пример обработки</h3>
-<pre><code>function toLatin() {
+    <div class="container page-heading">
+        <div class="breadcrumb">
+            <a href="index.html">Главная</a>
+            <span>/</span>
+            <span>06 / DOM и JavaScript</span>
+        </div>
+        <span class="eyebrow">06 / DOM и JavaScript</span>
+        <h1>Изменяем кириллицу на латиницу по клику</h1>
+        <div class="intro">Кнопки заменяют innerText полей поверх изображения паспорта. Фамилия, имя, отчество, пол и
+            место рождения переходят в латинскую запись, а год рождения 2007 — в MMVII.
+        </div>
+    </div>
+    <div class="container">
+        <nav class="section-nav" aria-label="Разделы страницы">
+            <a href="#section-1">
+                <span>01</span>Изменение по событию</a>
+            <a href="#section-2">
+                <span>02</span>Как это работает</a>
+            <a href="#top">К началу ↑</a>
+        </nav>
+        <section class="section" id="section-1">
+            <div class="hero-actions passport-actions">
+                <button class="button button-primary" type="button" onclick="toLatin()" id="transliterate-passport">
+                    Заменить на латиницу →
+                </button>
+                <button class="button" type="button" onclick="toCyrillic()" id="restore-passport">Вернуть кириллицу
+                </button>
+            </div>
+            <div class="passport-layout">
+                <div class="passport-reference" id="passport" role="group"
+                     aria-label="Вторая и третья страницы паспорта">
+                    <img class="passport-background" src="images/passport.png" width="522" height="731"
+                         alt="Вторая и третья страницы паспорта">
+                    <div class="photo-slot passport-reference-photo" data-placeholder=""><img
+                            src="images/passport-photo.png" alt="Фотография владельца"></div>
+                    <div class="f" style="left:20.3%;top:10.7%;" id="issuer">УФМС по городу СПб и ЛО</div>
+                    <div class="f" style="left:18.8%;top:21.9%;" id="issuedate">23.02.2022</div>
+                    <div class="f" style="left:55.6%;top:21.9%;" id="code">965-085</div>
+                    <div class="f" style="left:42.1%;top:56.1%;" id="surname">Макарьев</div>
+                    <div class="f" style="left:38.1%;top:63.8%;" id="firstname">Виталий</div>
+                    <div class="f" style="left:41.8%;top:67.5%;" id="patronymic">Юрьевич</div>
+                    <div class="f" style="left:37.1%;top:71.3%;" id="gender">мужской</div>
+                    <div class="f" style="left:56.9%;top:71.3%;" id="birthdate">17.04.<span id="year">2007</span></div>
+                    <div class="f" style="left:42.3%;top:75.0%;" id="birthplace">Санкт-Петербург</div>
+                </div>
+                <aside class="code-panel">
+                    <h3>Замена по событию click</h3>
+                    <div class="reading">Кнопки вызывают toLatin() и toCyrillic(). Обработчики меняют innerText полей
+                        поверх изображения паспорта.
+                    </div>
+                    <div class="js-status" id="passport-status" role="status" aria-live="polite"></div>
+                    <dl class="data-list">
+                        <div>
+                            <dt>Состояние</dt>
+                            <dd id="passport-language">Кириллица</dd>
+                        </div>
+                        <div>
+                            <dt>Год на латинице</dt>
+                            <dd>MMVII</dd>
+                        </div>
+                        <div>
+                            <dt>Меняемое свойство</dt>
+                            <dd>innerText</dd>
+                        </div>
+                    </dl>
+                    <div class="notice">В латинском представлении 2007 = MMVII. Пол записывается как male, место
+                        рождения — как Sankt-Peterburg.
+                    </div>
+                </aside>
+            </div>
+        </section>
+        <section class="section" id="section-2">
+            <div class="section-heading">
+                <div>
+                    <div class="section-number">02 / DOM И JAVASCRIPT</div>
+                    <h2>От события к результату</h2></div>
+                <p>Один щелчок меняет поля паспорта; второй возвращает исходные данные.</p>
+            </div>
+            <div class="split">
+                <div class="reading">
+                    <ol class="list-steps">
+                        <li><strong>Вызываем функцию.</strong>Атрибут onclick связывает кнопку с toLatin() или
+                            toCyrillic().
+                        </li>
+                        <li><strong>Меняем innerText.</strong>Фамилия, имя, отчество, пол и место рождения получают
+                            латинскую запись.
+                        </li>
+                        <li><strong>Записываем год римскими цифрами.</strong>2007 превращается в MMVII. Кнопка возврата
+                            восстанавливает все исходные значения.
+                        </li>
+                    </ol>
+                </div>
+                <div class="code-panel">
+                    <h3>Пример обработки</h3>
+                    <pre><code>function toLatin() {
   document.getElementById('surname').innerText = 'Makarev';
   document.getElementById('firstname').innerText = 'Vitaliy';
   document.getElementById('patronymic').innerText = 'Yurevich';
@@ -119,34 +150,38 @@
   document.getElementById('birthplace').innerText = 'Sankt-Peterburg';
   document.getElementById('year').innerText = 'MMVII';
 }</code></pre>
-<div class="reading" style="margin-top:18px">Данные остаются HTML-элементами. Фон паспорта задаётся отдельным изображением.</div>
-</div>
-</div>
-</section>
-<a class="top-link" href="#top">К началу страницы ↑</a>
-<noscript>
-<div class="no-js-note">Для изменения по клику включи JavaScript в браузере.</div>
-</noscript>
-</div>
+                    <div class="reading" style="margin-top:18px">Данные остаются HTML-элементами. Фон паспорта задаётся
+                        отдельным изображением.
+                    </div>
+                </div>
+            </div>
+        </section>
+        <a class="top-link" href="#top">К началу страницы ↑</a>
+        <noscript>
+            <div class="no-js-note">Для изменения по клику включи JavaScript в браузере.</div>
+        </noscript>
+    </div>
 </main>
 <footer class="site-footer">
-<div class="container">
-<div class="footer-top">
-<div>
-<div class="footer-brand">FIELD MANUAL / TANKS BLITZ</div>
-<p>Учебный справочник о Tanks Blitz от Lesta: техника, бои 7×7 и русскоязычное сообщество. Изображения: материалы Lesta и публичные каналы авторов.</p>
-</div>
-<div class="footer-links">
-<a href="community.html#contacts">Связаться</a>
-<a href="community.html#order">Записаться на тренировку</a>
-<a href="https://wiki.lesta.ru/ru/Tanks_Blitz" target="_blank" rel="noopener noreferrer">Руководство Tanks Blitz ↗</a>
-</div>
-</div>
-<div class="footer-bottom">
-<span>2026 · Высшая школа экономики</span>
-<span>Сначала понимание — затем победа.</span>
-</div>
-</div>
+    <div class="container">
+        <div class="footer-top">
+            <div>
+                <div class="footer-brand">FIELD MANUAL / TANKS BLITZ</div>
+                <p>Учебный справочник о Tanks Blitz от Lesta: техника, бои 7×7 и русскоязычное сообщество. Изображения:
+                    материалы Lesta и публичные каналы авторов.</p>
+            </div>
+            <div class="footer-links">
+                <a href="community.html#contacts">Связаться</a>
+                <a href="community.html#order">Записаться на тренировку</a>
+                <a href="https://wiki.lesta.ru/ru/Tanks_Blitz" target="_blank" rel="noopener noreferrer">Руководство
+                    Tanks Blitz ↗</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>2026 · Высшая школа экономики</span>
+            <span>Сначала понимание — затем победа.</span>
+        </div>
+    </div>
 </footer>
 </body>
 </html>
