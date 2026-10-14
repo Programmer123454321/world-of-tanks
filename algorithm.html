@@ -54,27 +54,22 @@
 </div>
 <span class="eyebrow">07 / DOM и JavaScript</span>
 <h1>Решение алгоритмической задачи</h1>
-<p class="intro">Решение из algo.html подключено к назначенному варианту 1050. Введи число a, проверь результат и отправь формулировку, данные и решение на сервер.</p>
+<p class="intro">Задача 1050. Введи число a, проверь результат и отправь формулировку, данные и решение на сервер.</p>
 </div>
 <div class="container">
 <nav class="section-nav" aria-label="Разделы страницы">
 <a href="#section-1">
 <span>01</span>Вычисление</a>
-<a href="#section-2">
-<span>02</span>Две ветви вычисления</a>
 <a href="#top">К началу ↑</a>
 </nav>
 <section class="section" id="section-1">
-<div class="split">
-<form id="algorithm-form" class="form-panel" action="https://httpbin.org/post" method="post" target="_blank" data-remote-form>
+<div>
+<form id="algorithm-form" class="form-panel" style="max-width:760px" action="https://httpbin.org/post" method="post" target="_blank" data-remote-form>
 <h2 style="font-size:24px;margin-bottom:18px">Условие и данные</h2>
 <div class="form-grid">
 <div class="field field-wide">
 <label for="algorithm-task">Номер алгоритмической задачи</label>
-<select id="algorithm-task" name="algorithm_task_number" required>
-<option value="">Выбери номер задачи</option>
-</select>
-<small>Вариант 1050 решается по предоставленному algo.html. Задачи 1001–1018 сохранены как дополнительные примеры.</small>
+<input id="algorithm-task" name="algorithm_task_number" type="text" value="1050" readonly>
 </div>
 <div class="field field-wide">
 <label for="algorithm-statement">Формулировка задачи</label>
@@ -82,6 +77,10 @@
 </div>
 </div>
 <div class="form-grid" id="algorithm-inputs" style="margin-top:20px">
+<div class="field">
+<label for="algorithm-a">Аргумент a</label>
+<input id="algorithm-a" name="a" type="number" step="any" value="10" required>
+</div>
 </div>
 <input type="hidden" name="submission_source" value="field-manual-algorithm">
 <div class="form-actions">
@@ -98,47 +97,10 @@
 <small>В новой вкладке откроется ответ удалённого сервера.</small>
 </div>
 </form>
-<aside>
-<div class="algorithm-result" aria-live="polite" aria-atomic="true">
-<h3>Результат вычисления</h3>
-<p id="algorithm-result-text">Введи данные и нажми «Проверить».</p>
-<p id="algorithm-result-details" class="caption-note">
-</p>
-</div>
-<div id="algorithm-status" class="js-status" role="status"></div>
-<div class="reading" style="margin-top:30px">
-<h3>Вычисления без лишних шагов</h3>
-<ol class="list-steps">
-<li>
-<strong>Назначенный вариант — 1050.</strong>Для него подключены формула из algo.html и поле a со значением 10 по умолчанию.</li>
-<li>
-<strong>Проверь входные данные.</strong>Поля принимают числа; программа учитывает области определения и ограничения.</li>
-<li>
-<strong>Вычисли и отправь.</strong>Перед отправкой результат пересчитывается, чтобы он соответствовал текущим данным.</li>
-</ol>
-</div>
-<div class="notice">При a &lt; 62 используется первая ветвь. Граница a = 62 относится ко второй ветви.</div>
-</aside>
 </div>
 <noscript>
-<div class="no-js-note">Для выбора варианта и вычисления нужен JavaScript.</div>
+<div class="no-js-note">Для вычисления нужен JavaScript.</div>
 </noscript>
-</section>
-<section class="section reading" id="section-2">
-<div class="section-number">02 / УСЛОВИЕ И РЕШЕНИЕ</div>
-<h2>Две ветви вычисления</h2>
-<p style="margin-top:20px">Вариант 1050 использует предоставленное решение из algo.html. При a &lt; 62 вычисляется a² + 4 + 5; при a ≥ 62 — 1/a² + 4a + 5.</p>
-<pre><code>if (a &lt; 62) {
-  result = a * a + 4 + 5;
-} else {
-  result = 1 / (a * a) + 4 * a + 5;
-}</code></pre>
-<ol style="margin-top:20px">
-<li>Введи вещественное число a; значение по умолчанию — 10.</li>
-<li>Нажми «Проверить»: при a = 10 результат равен 109.</li>
-<li>Нажми «Отправить»: форма передаст номер, формулировку, a и пересчитанный результат на сервер.</li>
-</ol>
-<p>Значение a = 62 относится ко второй ветви. После изменения входного числа результат очищается. В списке также сохранены дополнительные учебные примеры 1001–1018.</p>
 </section>
 <a class="top-link" href="#top">К началу страницы ↑</a>
 </div>
@@ -157,7 +119,7 @@
 </div>
 </div>
 <div class="footer-bottom">
-<span>2026 · HTML / CSS / JavaScript</span>
+<span>2026 · Высшая школа экономики</span>
 <span>Сначала понимание — затем победа.</span>
 </div>
 </div>

@@ -33,8 +33,9 @@
       firstname: String(student.firstName || 'Виталий'),
       patronymic: String(student.patronymic || 'Юрьевич'),
       year: String(student.birthYear || '2007'),
-      gender: 'не указан',
-      birthplace: 'не указано'
+      issuer: 'УФМС по городу СПб и ЛО',
+      gender: 'мужской',
+      birthplace: 'Санкт-Петербург'
     };
     const fields = Object.fromEntries(Object.keys(original).map(id => [id, document.getElementById(id)]));
     const language = document.getElementById('passport-language');
@@ -47,14 +48,13 @@
       if (status) status.innerText = message;
     }
     write(original);
-    // Как в passport_latin.html: функции onclick меняют innerText поверх скана.
     window.toLatin = function toLatin() {
       write({
         surname: transliterate(original.surname),
         firstname: transliterate(original.firstname),
         patronymic: transliterate(original.patronymic),
-        gender: 'unknown',
-        birthplace: 'not specified',
+        gender: 'male',
+        birthplace: transliterate(original.birthplace),
         year: toRoman(original.year)
       });
       setState('Латиница', 'Данные переведены на латиницу. Год рождения: ' + toRoman(original.year) + '.');
@@ -66,7 +66,6 @@
 
     const read = document.getElementById('read-passport');
     if (read) read.addEventListener('click', () => {
-      // Индексы соответствуют passport.html из предоставленного образца.
       document.getElementById('read-surname').innerText = document.getElementsByTagName('p')[1].childNodes[1].innerText;
       document.getElementById('read-name').innerText = document.getElementsByTagName('p')[2].childNodes[1].innerText;
       document.getElementById('read-year').innerText = document.getElementsByTagName('p')[5].childNodes[2].innerText;

@@ -1260,7 +1260,7 @@ code {
 
 
 
-/* Данные и обработчики паспорта по образцу hockey_site 4. */
+/* Паспорт: данные и обработчики. */
 .passport-dom-data section+section { margin-top:30px; padding-top:25px; border-top:1px solid var(--line); }
 .passport-dom-data h2 { font-size:24px; margin-bottom:20px; }
 .passport-dom-data p { font-size:14px; color:var(--muted); }

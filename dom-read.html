@@ -54,7 +54,7 @@
 </div>
 <span class="eyebrow">05 / DOM и JavaScript</span>
 <h1>DOM_JS. Считываем информацию из DOM</h1>
-<div class="intro">Паспортные данные представлены строками HTML, как в предоставленном образце. Фамилия, имя и год рождения считываются через getElementsByTagName и childNodes.</div>
+<div class="intro">Паспортные данные представлены строками HTML. Фамилия, имя и год рождения считываются через getElementsByTagName и childNodes.</div>
 </div>
 <div class="container">
 <nav class="section-nav" aria-label="Разделы страницы">
@@ -69,24 +69,23 @@
 <div class="code-panel passport-dom-data">
 <section aria-label="Страница 2 паспорта">
 <h2>Страница 2</h2>
-<p>Серия и номер: <span>не указаны</span></p>
+<p>Паспорт выдан: <span>УФМС по городу СПб и ЛО</span></p>
 <p>Фамилия: <span id="surname">Макарьев</span></p>
 <p>Имя: <span id="firstname">Виталий</span></p>
 <p>Отчество: <span id="patronymic">Юрьевич</span></p>
-<p>Пол: <span>не указан</span></p>
-<p>Дата рождения: <span>__.__.</span><span id="year">2007</span></p>
-<p>Место рождения: <span>не указано</span></p>
+<p>Пол: <span>мужской</span></p>
+<p>Дата рождения: <span>17.04.</span><span id="year">2007</span></p>
+<p>Место рождения: <span>Санкт-Петербург</span></p>
 </section>
 <section aria-label="Страница 3 паспорта">
 <h2>Страница 3</h2>
-<p>Зарегистрирован по адресу: <span>не указан</span></p>
-<p>Дата регистрации: <span>не указана</span></p>
+<p>Дата выдачи: <span>23.02.2022</span></p>
+<p>Код подразделения: <span>965-085</span></p>
 </section>
-<div class="notice">Фамилия, имя, отчество и год рождения указаны автором. Остальные реквизиты не заполнены; день и месяц обозначены как __.__.</div>
 </div>
 <aside class="code-panel">
 <h3>Команды для консоли браузера</h3>
-<div class="reading">Открой F12 и вкладку Console. Команды считывают поля в том же порядке, что в предоставленном образце.</div>
+<div class="reading">Открой F12 и вкладку Console. Команды считывают поля в порядке их расположения на странице.</div>
 <pre><code>// Фамилия
 document.getElementsByTagName('p')[1].childNodes[1].innerText
 
@@ -144,7 +143,7 @@ document.getElementsByTagName('p')[5].childNodes[2].innerText</code></pre>
 </div>
 </div>
 <div class="footer-bottom">
-<span>2026 · HTML / CSS / JavaScript</span>
+<span>2026 · Высшая школа экономики</span>
 <span>Сначала понимание — затем победа.</span>
 </div>
 </div>

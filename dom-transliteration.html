@@ -54,7 +54,7 @@
 </div>
 <span class="eyebrow">06 / DOM и JavaScript</span>
 <h1>Изменяем кириллицу на латиницу по клику</h1>
-<div class="intro">Как в предоставленном образце, кнопки заменяют innerText полей поверх изображения паспорта. Фамилия, имя, отчество, пол и место рождения переходят в латинскую запись, а 2007 — в MMVII.</div>
+<div class="intro">Кнопки заменяют innerText полей поверх изображения паспорта. Фамилия, имя, отчество, пол и место рождения переходят в латинскую запись, а год рождения 2007 — в MMVII.</div>
 </div>
 <div class="container">
 <nav class="section-nav" aria-label="Разделы страницы">
@@ -72,28 +72,27 @@
 <div class="passport-layout">
 <div class="passport-reference" id="passport" role="group" aria-label="Вторая и третья страницы паспорта">
 <img class="passport-background" src="images/passport.png" width="522" height="731" alt="Вторая и третья страницы паспорта">
-<div class="photo-slot passport-reference-photo" data-placeholder="Фото владельца"><img src="images/passport-photo-todo.png" alt="Место для фотографии владельца"></div>
-<div class="f" style="left:8%;top:14.9%;">Не указано</div>
-<div class="f" style="left:8%;top:18.6%;">Не указано</div>
-<div class="f" style="left:8%;top:25%;">Не указана</div>
-<div class="f" style="left:44%;top:25%;">Не указан</div>
-<div class="f" style="left:36%;top:59.1%;" id="surname">Макарьев</div>
-<div class="f" style="left:36%;top:66.5%;" id="firstname">Виталий</div>
-<div class="f" style="left:36%;top:69.8%;" id="patronymic">Юрьевич</div>
-<div class="f" style="left:39.5%;top:74%;" id="gender">не указан</div>
-<div class="f" style="left:56%;top:74%;" id="year">2007</div>
-<div class="f" style="left:36%;top:77.6%;" id="birthplace">не указано</div>
+<div class="photo-slot passport-reference-photo" data-placeholder=""><img src="images/passport-photo.png" alt="Фотография владельца"></div>
+<div class="f" style="left:20.3%;top:10.7%;" id="issuer">УФМС по городу СПб и ЛО</div>
+<div class="f" style="left:18.8%;top:21.9%;" id="issuedate">23.02.2022</div>
+<div class="f" style="left:55.6%;top:21.9%;" id="code">965-085</div>
+<div class="f" style="left:42.1%;top:56.1%;" id="surname">Макарьев</div>
+<div class="f" style="left:38.1%;top:63.8%;" id="firstname">Виталий</div>
+<div class="f" style="left:41.8%;top:67.5%;" id="patronymic">Юрьевич</div>
+<div class="f" style="left:37.1%;top:71.3%;" id="gender">мужской</div>
+<div class="f" style="left:56.9%;top:71.3%;" id="birthdate">17.04.<span id="year">2007</span></div>
+<div class="f" style="left:42.3%;top:75.0%;" id="birthplace">Санкт-Петербург</div>
 </div>
 <aside class="code-panel">
 <h3>Замена по событию click</h3>
-<div class="reading">Кнопки вызывают toLatin() и toCyrillic(), как в образце. Обработчики меняют innerText полей поверх изображения паспорта.</div>
+<div class="reading">Кнопки вызывают toLatin() и toCyrillic(). Обработчики меняют innerText полей поверх изображения паспорта.</div>
 <div class="js-status" id="passport-status" role="status" aria-live="polite"></div>
 <dl class="data-list">
 <div><dt>Состояние</dt><dd id="passport-language">Кириллица</dd></div>
 <div><dt>Год на латинице</dt><dd>MMVII</dd></div>
 <div><dt>Меняемое свойство</dt><dd>innerText</dd></div>
 </dl>
-<div class="notice">В латинском представлении 2007 = MMVII. Неуказанные пол и место рождения обозначаются как unknown и not specified.</div>
+<div class="notice">В латинском представлении 2007 = MMVII. Пол записывается как male, место рождения — как Sankt-Peterburg.</div>
 </aside>
 </div>
 </section>
@@ -116,11 +115,11 @@
   document.getElementById('surname').innerText = 'Makarev';
   document.getElementById('firstname').innerText = 'Vitaliy';
   document.getElementById('patronymic').innerText = 'Yurevich';
-  document.getElementById('gender').innerText = 'unknown';
-  document.getElementById('birthplace').innerText = 'not specified';
+  document.getElementById('gender').innerText = 'male';
+  document.getElementById('birthplace').innerText = 'Sankt-Peterburg';
   document.getElementById('year').innerText = 'MMVII';
 }</code></pre>
-<div class="reading" style="margin-top:18px">Данные остаются HTML-элементами. Фон паспорта задаётся отдельным изображением, как в предоставленном коде.</div>
+<div class="reading" style="margin-top:18px">Данные остаются HTML-элементами. Фон паспорта задаётся отдельным изображением.</div>
 </div>
 </div>
 </section>
@@ -144,7 +143,7 @@
 </div>
 </div>
 <div class="footer-bottom">
-<span>2026 · HTML / CSS / JavaScript</span>
+<span>2026 · Высшая школа экономики</span>
 <span>Сначала понимание — затем победа.</span>
 </div>
 </div>
